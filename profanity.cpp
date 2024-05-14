@@ -276,7 +276,10 @@ int main(int argc, char **argv)
 					precompiled = true;
 				}
 			}
-
+			//ignoring phantoms
+			if (computeUnits < 1) {
+			continue;
+			}
 			std::cout << "  GPU-" << i << ": " << strName << ", " << globalMemSize << " bytes available, " << computeUnits << " compute units (precompiled = " << (precompiled ? "yes" : "no") << ")" << std::endl;
 			vDevices.push_back(vFoundDevices[i]);
 			mDeviceIndex[vFoundDevices[i]] = i;
