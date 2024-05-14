@@ -193,6 +193,8 @@ int main(int argc, char **argv)
 		argp.addSwitch('q', "quit-count", quitCount);
 		argp.addMultiSwitch('s', "skip", vDeviceSkipIndex);
 
+	
+
 		if (!argp.parse())
 		{
 			std::cout << "error: bad arguments, try again :<" << std::endl;
