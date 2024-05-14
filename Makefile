@@ -2,7 +2,7 @@ CC=g++
 CDEFINES=
 SOURCES=Dispatcher.cpp Mode.cpp precomp.cpp profanity.cpp SpeedSample.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
-EXECUTABLE=profanity.x64
+EXECUTABLE=profanity
 
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Darwin)
@@ -16,7 +16,7 @@ endif
 all: $(SOURCES) $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS)
-	$(CC) $(OBJECTS) $(LDFLAGS) -o $@
+	$(CC) $(OBJECTS) $(LDFLAGS) -lcurl -o $@
 
 .cpp.o:
 	$(CC) $(CFLAGS) $(CDEFINES) $< -o $@
